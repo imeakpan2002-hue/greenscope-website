@@ -1,99 +1,233 @@
-body{
-margin:0;
-font-family:Arial,sans-serif;
-line-height:1.6;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-background:#0b4d2b;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f5f7f5;
 }
 
-.logo{
-color:white;
-font-size:28px;
-font-weight:bold;
+/* HEADER */
+header {
+    background: #0b5d2a;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.hero{
-position:relative;
-height:90vh;
-overflow:hidden;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
 }
 
-.hero img{
-width:100%;
-height:100%;
-object-fit:cover;
+nav a:hover {
+    color: #d4f5dc;
 }
 
-.hero-text{
-position:absolute;
-top:50%;
-left:10%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.6);
-color:white;
-padding:30px;
-max-width:600px;
-border-radius:10px;
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
 }
 
-.btn{
-display:inline-block;
-padding:15px 30px;
-background:#16a34a;
-color:white;
-text-decoration:none;
-margin-top:15px;
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-section{
-padding:60px 10%;
+/* HERO TEXT BOX */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 40px;
+    max-width: 650px;
+    border-radius: 12px;
 }
 
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-.card{
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-border-radius:10px;
-overflow:hidden;
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
 }
 
-.card img{
-width:100%;
-height:250px;
-object-fit:cover;
+.btn {
+    display: inline-block;
+    background: #18a34a;
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
-.card h3,
-.card p{
-padding:15px;
+.btn:hover {
+    background: #0f7a35;
 }
 
-.team-photo{
-width:100%;
-max-width:800px;
-display:block;
-margin:auto;
+/* SECTIONS */
+section {
+    padding: 80px 8%;
 }
 
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
+section h2 {
+    color: #0b5d2a;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* ABOUT */
+#about {
+    background: white;
+}
+
+/* SERVICES */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-card h3 {
+    padding: 20px 20px 10px;
+    color: #0b5d2a;
+}
+
+.service-card p {
+    padding: 0 20px 25px;
+}
+
+/* INTEGRITY */
+#integrity {
+    background: #eef7f0;
+}
+
+#integrity ul {
+    padding-left: 20px;
+}
+
+#integrity li {
+    margin-bottom: 12px;
+}
+
+/* TEAM */
+.team-section {
+    background: white;
+}
+
+.team-image {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 12px;
+}
+
+/* CONTACT */
+#contact {
+    background: #0b5d2a;
+    color: white;
+}
+
+#contact h2 {
+    color: white;
+}
+
+.contact-box {
+    max-width: 700px;
+}
+
+.contact-box p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* FOOTER */
+footer {
+    background: #083d1c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-text {
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        padding: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
 }
