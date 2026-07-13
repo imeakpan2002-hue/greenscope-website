@@ -1,18 +1,26 @@
-/* RESET */
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    color: #333;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f5f7f5;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 header {
     background: #0b5d2a;
     color: white;
@@ -30,32 +38,39 @@ header {
     font-weight: bold;
 }
 
+nav {
+    display: flex;
+    gap: 25px;
+}
+
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
     font-weight: 500;
 }
 
 nav a:hover {
-    color: #d4f5dc;
+    color: #c8f7d0;
 }
 
-/* HERO SECTION */
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero {
     position: relative;
-    height: 90vh;
+    width: 100%;
+    height: 650px;
     overflow: hidden;
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
+    height: 650px;
     object-fit: cover;
     display: block;
 }
 
-/* HERO TEXT BOX */
 .hero-text {
     position: absolute;
     top: 50%;
@@ -65,12 +80,13 @@ nav a:hover {
     color: white;
     padding: 40px;
     max-width: 650px;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .hero-text h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: white;
 }
 
 .hero-text p {
@@ -80,51 +96,61 @@ nav a:hover {
 
 .btn {
     display: inline-block;
-    background: #18a34a;
+    background: #16a34a;
     color: white;
-    padding: 14px 28px;
     text-decoration: none;
+    padding: 14px 28px;
     border-radius: 6px;
     font-weight: bold;
 }
 
 .btn:hover {
-    background: #0f7a35;
+    background: #11823a;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
+
 section {
     padding: 80px 8%;
 }
 
 section h2 {
     color: #0b5d2a;
-    margin-bottom: 25px;
     font-size: 2rem;
+    margin-bottom: 25px;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
+
 #about {
     background: white;
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 30px;
 }
 
 .service-card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 
 .service-card img {
@@ -140,10 +166,13 @@ section h2 {
 }
 
 .service-card p {
-    padding: 0 20px 25px;
+    padding: 0 20px 20px;
 }
 
-/* INTEGRITY */
+/* =========================
+   DATA INTEGRITY
+========================= */
+
 #integrity {
     background: #eef7f0;
 }
@@ -156,20 +185,22 @@ section h2 {
     margin-bottom: 12px;
 }
 
-/* TEAM */
-.team-section {
-    background: white;
-}
+/* =========================
+   TEAM
+========================= */
 
 .team-image {
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     display: block;
-    margin: 25px auto;
+    margin: 30px auto;
     border-radius: 12px;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
+
 #contact {
     background: #0b5d2a;
     color: white;
@@ -179,16 +210,15 @@ section h2 {
     color: white;
 }
 
-.contact-box {
-    max-width: 700px;
-}
-
 .contact-box p {
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     background: #083d1c;
     color: white;
@@ -196,24 +226,45 @@ footer {
     padding: 25px;
 }
 
-/* MOBILE */
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 992px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
 
     header {
         flex-direction: column;
+        text-align: center;
         padding: 20px;
     }
 
     nav {
         margin-top: 15px;
-    }
-
-    nav a {
-        margin: 0 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {
-        height: 70vh;
+        height: 500px;
+    }
+
+    .hero img {
+        height: 500px;
     }
 
     .hero-text {
@@ -224,10 +275,18 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-text p {
         font-size: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 5%;
     }
 }
